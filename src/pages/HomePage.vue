@@ -325,15 +325,15 @@
             item.filename
           }}</span>
           <!-- 音频播放控件 -->
-          <audio :src="'/AIweb_material/' + item.filename + getBrowserExt(item.file_exts)" controls controlsList="nodownload" style="width:100%"></audio>
+          <audio :src="'/material/' + item.filename + getBrowserExt(item.file_exts)" controls controlsList="nodownload" style="width:100%"></audio>
         </div>
         <el-image
           v-if="chooseLabel != '音频'"
           loading="lazy"
-          :src="'/AIweb_material/' + item.filename + getBrowserExt(item.file_exts)"
+          :src="'/material/' + item.filename + getBrowserExt(item.file_exts)"
           fit="fill"
           :preview-src-list="[
-            '/AIweb_material/' +
+            '/material/' +
               item.filename +
               '_mediumImg' + getBrowserExt(item.file_exts),
           ]"
@@ -691,7 +691,7 @@ const downloadFile = (e, type) => {
     file_id: parseInt(e.id),
     ext: type,
   };
-  window.open("/AIweb_materialSys/materialSystem/getFile/"+filename.file_id+"/"+filename.ext)
+  window.open("/materialSys/materialSystem/getFile/"+filename.file_id+"/"+filename.ext)
   // 更新潮币
   getLocalInfo();
 
@@ -704,7 +704,7 @@ const downloadFile = (e, type) => {
   //       ext: type,
   //     };
 
-  //     window.open("/AIweb_materialSys/materialSystem/getFile/"+filename.file_id+"/"+filename.ext)
+  //     window.open("/materialSys/materialSystem/getFile/"+filename.file_id+"/"+filename.ext)
   //     // 更新潮币
   //     getLocalInfo();
 
